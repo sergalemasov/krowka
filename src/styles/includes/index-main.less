@@ -1,0 +1,94 @@
+@import '../vars/dimensions.less';
+@import '../vars/colors.less';
+@import '../vars/mixins.less';
+
+.index-main {
+    overflow: hidden;
+    position: relative;
+    flex: 1;
+
+    &__content {
+        max-width: @content-width-lg;
+        margin: 0 auto;
+        flex: 1;
+        position: relative;
+    }
+
+    &__message {
+        font-family: 'BrushType Cyr Bold', sans-serif;
+        font-weight: bold;
+        font-size: 50px;
+        text-transform: uppercase;
+        text-align: center;
+        color: @main-message-front-color;
+        text-shadow: 4px 6px 0 @main-message-back-color;
+        margin: 105px auto 0;
+        letter-spacing: 1.2px;
+
+        @media (max-width: @content-width-md) {
+            margin-top: 242px;
+            font-size: 45px;
+        }
+    }
+
+    &__phone {
+        position: relative;
+        height: 804px;
+        width: 419px;
+        margin: 14px auto 0;
+        transform: translateX(5px);
+        background-image: url('../img/phone.png');
+        background-repeat: no-repeat;
+
+        @media (max-width: @content-width-md) {
+            height: 745px;
+            margin-top: 27px;
+        }
+    }
+
+    &__character {
+        background-repeat: no-repeat;
+        position: absolute;
+        left: 50%;
+        opacity: 1;
+        transition: opacity 0.1s ease;
+        z-index: 1;
+
+        &_high-lvl {
+            top: 283px;
+            transform: translateX(calc(-50% + 298px));
+            width: 318px;
+            height: 798px;
+            background-image: url('../img/character-highlvl.png');
+
+            @media (max-width: @content-width-md) {
+                transform: translateX(calc(-50% + 278px));
+            }
+        }
+
+        &_low-lvl {
+            top: 286px;
+            transform: translateX(calc(-50% - 206px));
+            width: 323px;
+            height: 798px;
+            background-image: url('../img/character-lowlvl.png');
+        }
+    }
+
+    &__bubble {
+        background-repeat: no-repeat;
+        position: absolute;
+        background-image: url('../img/bubble.png');
+        left: 50%;
+        top: 438px;
+        transform: translateX(318px);
+        z-index: 2;
+        width: 245px;
+        height: 102px;
+
+        @media (max-width: @content-width-md) {
+            transform: translateX(66px);
+            top: 618px;
+        }
+    }
+}

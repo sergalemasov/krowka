@@ -1,0 +1,72 @@
+@import '../vars/colors.less';
+
+@font-face {
+    font-family: 'BrushType Cyr Bold';
+    src: url('../fonts/BrushType Cyr Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+body {
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: @body-background-color;
+
+    @media (max-width: @content-width-md) {
+        height: auto;
+    }
+
+    &.privacy {
+        height: auto;
+    }
+}
+
+.app-wrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-width: @content-min-width;
+    position: relative;
+    overflow-x: hidden;
+
+    &__background {
+        background-image: url(../img/bg.png);
+        background-repeat: no-repeat;
+        position: absolute;
+        width: 1920px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 0;
+        bottom: 0;
+
+        @media (max-width: @content-width-md) {
+            top: 250px;
+        }
+    }
+
+    &__overlay {
+        display: none;
+        background-color: @overlay-background-color;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+.app-wrap_privacy {
+    .app-wrap {
+        &__overlay {
+            display: block;
+        }
+
+        &__background {
+            top: -200px;
+        }
+    }
+}

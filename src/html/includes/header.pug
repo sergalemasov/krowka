@@ -1,0 +1,12 @@
+header(class=isPrivacyPolicy ? 'header header_privacy' : 'header')
+    div(class='header__content')
+        a(class='header__mail' href='mailto:tar.ko906090@gmail.com')
+            img(src='../img/mail.png')
+        a(class='header__support' href='mailto:tar.ko906090@gmail.com')
+            img(src='../img/support.png')
+        a(class='header__privacy-policy' href='/privacy-policy.html')
+            img(src='../img/privacy-policy.png')
+        a(class='header__logo' href='#')
+            img(src='../img/logo.png')
+        if isPrivacyPolicy
+            div(class='header__character')

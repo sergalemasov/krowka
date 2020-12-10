@@ -1,0 +1,13 @@
+doctype html
+html
+  include includes/base-head.pug
+    include includes/privacy-policy-head.pug
+  body(class='privacy')
+  - var isPrivacyPolicy = true
+    div(class='app-wrap app-wrap_privacy')
+      div(class='app-wrap__background')
+      div(class='app-wrap__overlay')
+      include includes/header.pug
+      include includes/privacy-policy-main.pug
+      include includes/footer.pug
+    script(src='js/index.js')

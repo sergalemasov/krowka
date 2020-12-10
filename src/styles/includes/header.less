@@ -1,0 +1,124 @@
+@import '../vars/dimensions.less';
+@import '../vars/colors.less';
+@import '../vars/mixins.less';
+
+.header {
+    height: 100px;
+    box-sizing: border-box;
+
+    @media (max-width: @content-width-md) {
+        height: 200px;
+        padding-top: 40px;
+    }
+
+    &__content {
+        max-width: @content-width-lg;
+        margin: 0 auto;
+        display: flex;
+        position: relative;
+        height: 100%;
+        align-items: center;
+
+        @media (max-width: @content-width-md) {
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+    }
+
+    &__mail,
+    &__support,
+    &__privacy-policy,
+    &__logo {
+        .no-tap-highlight();
+        display: block;
+
+        & > img {
+            display: block;
+        }
+    }
+
+    &__mail {
+
+        margin-left: 20px;
+
+        @media (max-width: @content-width-md) {
+            margin-left: 0;
+            position: absolute;
+            top: 100px;
+        }
+    }
+
+    &__support {
+        margin-left: 11px;
+
+        @media (max-width: @content-width-md) {
+            margin-left: 25px;
+            margin-right: 15px;
+        }
+    }
+
+    &__privacy-policy {
+        margin-left: auto;
+        margin-right: 20px;
+
+        @media (max-width: @content-width-md) {
+            margin-right: 0;
+            margin-left: 15px;
+        }
+    }
+
+    &__logo {
+        position: absolute;
+        top: 17px;
+        left: 50%;
+        transform: translateX(calc(-50% + 30px));
+        background-repeat: no-repeat;
+        background-image: url(../img/logo.png);
+        z-index: 1;
+
+        @media (max-width: @content-width-md) {
+            transform: translateX(-50%);
+            top: 180px;
+        }
+    }
+}
+
+.header_privacy {
+    height: 100px;
+
+    .header {
+        &__logo {
+            top: 0;
+
+            @media (max-width: @content-width-md) {
+                display: none;
+            }
+        }
+
+        &__character {
+            top: 90px;
+            transform: translateX(calc(-50% + 330px));
+            width: 323px;
+            height: 798px;
+            background-image: url('../img/character-lowlvl.png');
+            background-repeat: no-repeat;
+            position: absolute;
+            left: 50%;
+
+            @media (max-width: @content-width-md) {
+                top: -30px;
+                transform: translateX(calc(-50% + 300px));
+            }
+        }
+
+        &__mail {
+            @media (max-width: @content-width-md) {
+                top: 8px;
+                left: 50%;
+
+                transform: translateX(-298px);
+            }
+        }
+    }
+}

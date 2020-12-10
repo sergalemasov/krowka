@@ -1,0 +1,74 @@
+@import '../vars/colors';
+@import '../vars/mixins';
+@import '../vars/dimensions';
+
+.privacy-policy-main {
+    overflow: hidden;
+    position: relative;
+
+    &__message {
+        font-family: 'BrushType Cyr Bold', sans-serif;
+        font-weight: bold;
+        font-size: 50px;
+        text-transform: uppercase;
+        text-align: center;
+        color: @main-message-front-color;
+        text-shadow: 4px 6px 0 @main-message-back-color;
+        margin: 105px auto 0;
+        letter-spacing: 1.2px;
+
+        @media (max-width: @content-width-md) {
+            margin-top: 42px;
+            font-size: 45px;
+        }
+    }
+
+    &__text-wrap {
+        background-color: @privacy-policy-content-background-color;
+        position: relative;
+        margin-top: 54px;
+
+        @media (max-width: @content-width-md) {
+            margin-top: 34px;
+        }
+    }
+
+    &__text {
+        padding: 40px 0 50px;
+        max-width: @content-width-lg;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+        font-size: 16px;
+        line-height: 18px;
+        color: @privacy-policy-text-color;
+
+        & p {
+            margin: 20px 0;
+        }
+
+        & li {
+            margin: 10px 0;
+        }
+
+        & a {
+            text-decoration: none;
+            color: @privacy-policy-text-color;
+            transition: color 0.1s ease;
+
+            &:hover {
+                color: lighten(@privacy-policy-text-color, 10%);
+            }
+        }
+
+        & h3 {
+            margin: 30px 0;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        @media (max-width: 1250px) {
+            padding: 20px 30px 50px;
+        }
+    }
+}

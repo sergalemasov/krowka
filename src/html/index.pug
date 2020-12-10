@@ -1,0 +1,11 @@
+doctype html
+html
+  include includes/base-head.pug
+    include includes/index-head.pug
+  body
+    div(class='app-wrap')
+      div(class='app-wrap__background')
+      include includes/header.pug
+      include includes/index-main.pug
+      include includes/footer.pug
+    script(src='js/index.js')
